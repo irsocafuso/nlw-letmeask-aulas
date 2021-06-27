@@ -3,11 +3,20 @@
 	align-items: stretch;
 	height: 100vh;
 
+	&.dark {
+		background: #333;
+	}
+
 	aside {
 		flex: 7;
 	
 		background: #835afd;
 		color: #FFF;
+
+		&.dark {
+			background: #6243be;
+		}
+	
 	
 		display: flex;
 		flex-direction: column;
@@ -50,14 +59,25 @@
 		align-items: stretch;
 		text-align: center;
 
-		> img {
+		> svg {
 			align-self: center;
+		}
+
+		&.dark {
+			svg .logo-letter {
+					fill: #FFF;
+					stroke: #FFF;
+			}
 		}
 
 		h2 {
 			font-size: 24px;
 			margin: 64px 0 24px;
 			font-family: 'Poppins', sans-serif;
+
+			&.dark {
+				color: #FFF;
+			}
 		}
 
 		form {
