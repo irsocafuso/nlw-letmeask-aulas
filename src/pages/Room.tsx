@@ -22,7 +22,7 @@ export function Room() {
 	const params = useParams<RoomParams>();
 	const { user, signOut } = useAuth();
 	const history = useHistory();
-	const { theme, toggleTheme } = useTheme();
+	const { toggleTheme } = useTheme();
 
 	const [newQuestion, setNewQuestion] = useState('');
 
@@ -77,10 +77,10 @@ export function Room() {
 	}
 
 	return (
-		<div id="page-room" className={theme}>
+		<div id="page-room">
 			<header>
 				<div className="content">
-					<div className={theme}>
+					<div>
 						<svg width="157" height="75" viewBox="0 0 157 75" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path className="logo-letter" d="M0 18.999H4.47282V40.2735H0V18.999Z" fill="#29292E"/>
 							<path className="logo-letter" d="M22.5872 32.6181C22.5872 32.6755 22.5585 33.0769 22.5012 33.8223H10.8317C11.042 34.7781 11.5389 35.5331 12.3226 36.0874C13.1063 36.6417 14.0812 36.9189 15.2472 36.9189C16.05 36.9189 16.7572 36.8042 17.3689 36.5748C17.9997 36.3264 18.5827 35.9441 19.1179 35.428L21.4977 38.0084C20.0449 39.6714 17.9232 40.5029 15.1325 40.5029C13.3931 40.5029 11.8543 40.1684 10.5163 39.4994C9.1783 38.8113 8.14611 37.8651 7.41975 36.6609C6.6934 35.4566 6.33022 34.0899 6.33022 32.5608C6.33022 31.0507 6.68384 29.6936 7.39108 28.4894C8.11744 27.266 9.10184 26.3199 10.3443 25.6508C11.6059 24.9627 13.0108 24.6187 14.5591 24.6187C16.0691 24.6187 17.4358 24.9436 18.6591 25.5935C19.8825 26.2434 20.8382 27.18 21.5263 28.4033C22.2336 29.6076 22.5872 31.0125 22.5872 32.6181ZM14.5877 28.0019C13.5747 28.0019 12.7241 28.2887 12.0359 28.8621C11.3478 29.4355 10.9273 30.2192 10.7744 31.2132H18.3724C18.2195 30.2384 17.799 29.4642 17.1109 28.8908C16.4227 28.2982 15.5817 28.0019 14.5877 28.0019Z" fill="#29292E"/>
@@ -110,14 +110,14 @@ export function Room() {
 							</linearGradient>
 							</defs>
 						</svg>
-						<button onClick={toggleTheme} className={`change-theme ${theme==='dark' ? 'dark' : ''}`}>
+						<button onClick={toggleTheme} className="change-theme">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
 								<title>contrast</title>
 								<path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM4 16c0-6.627 5.373-12 12-12v24c-6.627 0-12-5.373-12-12z"></path>
 							</svg>
 						</button>
 					</div>
-					<div className={theme}>
+					<div >
 						<RoomCode code={roomId}/>
 						<Button 
 							onClick={signOutGoogleAccount}
@@ -128,7 +128,7 @@ export function Room() {
 				</div>
 			</header>
 			<main>
-				<div className={`room-title ${theme==='dark' ? 'dark' : ''}`}>
+				<div className="room-title">
 					<h1>Sala {title}</h1>
 					{ questions.length > 0 && <span>{questions.length} pergunta(s)</span>	}
 				</div>
@@ -149,7 +149,7 @@ export function Room() {
 						) : (
 							<span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
 						) }
-						<Button type="submit" isDark={theme==='dark' ? true : false} disabled={!user}>Enviar pergunta</Button>
+						<Button type="submit" disabled={!user}>Enviar pergunta</Button>
 					</div>
 				</form>
 

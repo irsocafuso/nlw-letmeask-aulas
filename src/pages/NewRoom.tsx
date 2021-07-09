@@ -4,7 +4,6 @@ import { FormEvent, useState } from 'react'
 import { database } from '../services/firebase';
 
 import { useAuth } from '../hooks/useAuth';
-import { useTheme } from '../hooks/useTheme';
 
 import { Button } from '../components/Button';
 
@@ -16,7 +15,6 @@ export function NewRoom() {
 	const { user } = useAuth();
 	const [newRoom, setNewRoom] = useState('');
 	const history = useHistory();
-	const { theme } = useTheme();
 
 
 	async function handleCreateRoom(event:FormEvent) {
@@ -37,14 +35,14 @@ export function NewRoom() {
 	}
 
 	return (
-		<div id="page-auth" className={theme}>
-			<aside className={theme}>
+		<div id="page-auth">
+			<aside>
 				<img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
 				<strong>Crie salas de Q&amp;A ao-vivo</strong>
 				<p>Tire as dúvidas da sua audiencia em tempo-real</p>
 			</aside>
 			<main>
-				<div className={`main-content ${theme==='dark' ? 'dark' : ''}`}>
+				<div className="main-content">
 				<svg width="157" height="75" viewBox="0 0 157 75" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path className="logo-letter" d="M0 18.999H4.47282V40.2735H0V18.999Z" fill="#29292E"/>
 						<path className="logo-letter" d="M22.5872 32.6181C22.5872 32.6755 22.5585 33.0769 22.5012 33.8223H10.8317C11.042 34.7781 11.5389 35.5331 12.3226 36.0874C13.1063 36.6417 14.0812 36.9189 15.2472 36.9189C16.05 36.9189 16.7572 36.8042 17.3689 36.5748C17.9997 36.3264 18.5827 35.9441 19.1179 35.428L21.4977 38.0084C20.0449 39.6714 17.9232 40.5029 15.1325 40.5029C13.3931 40.5029 11.8543 40.1684 10.5163 39.4994C9.1783 38.8113 8.14611 37.8651 7.41975 36.6609C6.6934 35.4566 6.33022 34.0899 6.33022 32.5608C6.33022 31.0507 6.68384 29.6936 7.39108 28.4894C8.11744 27.266 9.10184 26.3199 10.3443 25.6508C11.6059 24.9627 13.0108 24.6187 14.5591 24.6187C16.0691 24.6187 17.4358 24.9436 18.6591 25.5935C19.8825 26.2434 20.8382 27.18 21.5263 28.4033C22.2336 29.6076 22.5872 31.0125 22.5872 32.6181ZM14.5877 28.0019C13.5747 28.0019 12.7241 28.2887 12.0359 28.8621C11.3478 29.4355 10.9273 30.2192 10.7744 31.2132H18.3724C18.2195 30.2384 17.799 29.4642 17.1109 28.8908C16.4227 28.2982 15.5817 28.0019 14.5877 28.0019Z" fill="#29292E"/>
@@ -57,24 +55,24 @@ export function NewRoom() {
 						<path d="M81.0842 15.9024V8.73438C81.0842 5.56737 83.6516 3 86.8186 3H148.463C151.63 3 154.198 5.56737 154.198 8.73438V48.8751C154.198 52.0421 151.63 54.6094 148.463 54.6094H138.428L141.782 70.2603C142.075 71.6282 140.436 72.563 139.408 71.6141L124.092 57.4766H86.8186C83.6516 57.4766 81.0842 54.9093 81.0842 51.7422V48.8751" stroke="url(#paint3_linear)" strokeWidth="4.30079"/>
 						<defs>
 						<linearGradient id="paint0_linear" x1="87.6787" y1="18.999" x2="99.7578" y2="53.1105" gradientUnits="userSpaceOnUse">
-						<stop stop-color="#485BFF"/>
-						<stop offset="1" stop-color="#FF59F8"/>
+						<stop stopColor="#485BFF"/>
+						<stop offset="1" stopColor="#FF59F8"/>
 						</linearGradient>
 						<linearGradient id="paint1_linear" x1="87.6787" y1="18.999" x2="99.7578" y2="53.1105" gradientUnits="userSpaceOnUse">
-						<stop stop-color="#485BFF"/>
-						<stop offset="1" stop-color="#FF59F8"/>
+						<stop stopColor="#485BFF"/>
+						<stop offset="1" stopColor="#FF59F8"/>
 						</linearGradient>
 						<linearGradient id="paint2_linear" x1="87.6787" y1="18.999" x2="99.7578" y2="53.1105" gradientUnits="userSpaceOnUse">
-						<stop stop-color="#485BFF"/>
-						<stop offset="1" stop-color="#FF59F8"/>
+						<stop stopColor="#485BFF"/>
+						<stop offset="1" stopColor="#FF59F8"/>
 						</linearGradient>
 						<linearGradient id="paint3_linear" x1="81.0842" y1="3" x2="141.295" y2="77.547" gradientUnits="userSpaceOnUse">
-						<stop stop-color="#485BFF"/>
-						<stop offset="1" stop-color="#FF59F8"/>
+						<stop stopColor="#485BFF"/>
+						<stop offset="1" stopColor="#FF59F8"/>
 						</linearGradient>
 						</defs>
 					</svg>
-					<h2 className={theme}>Criar uma nova sala</h2>
+					<h2>Criar uma nova sala</h2>
 					<form onSubmit={handleCreateRoom}>
 						<input 
 							type="text"
@@ -82,7 +80,7 @@ export function NewRoom() {
 							onChange={event => setNewRoom(event.target.value)}
 							value={newRoom}
 						/>
-						<Button type="submit" isDark={theme==='dark' ? true : false}>
+						<Button type="submit">
 							Criar Sala
 						</Button>
 						<p>

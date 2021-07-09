@@ -3,19 +3,11 @@
 	align-items: stretch;
 	height: 100vh;
 
-	&.dark {
-		background: #333;
-	}
-
 	aside {
 		flex: 7;
 	
-		background: #835afd;
+		background: var(--primary);
 		color: #FFF;
-
-		&.dark {
-			background: #6243be;
-		}
 	
 	
 		display: flex;
@@ -36,13 +28,14 @@
 				font-size: 24px;
 				line-height: 32px;
 				margin-top: 16px;
-				color: #f8f8f8;
+				color: var(--background);
 			}
 		}
 	}
 	
 	main {
 		flex: 8;
+		background: var(--background);
 	
 		padding: 0 32px;
 	

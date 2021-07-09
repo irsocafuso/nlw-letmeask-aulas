@@ -2,10 +2,23 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
+	
+}
+
+//TODO: tirar as variaveis do root e colocar nas paginas para facilitar a alteração e definir as cores necessarias
+#root {
+	&.dark {
+		--background: #333;
+		--primary: #6243be;
+	}
+
+	--background: #f8f8f8;
+	--primary: #835afd;	
 }
 
 body {
-	background: #f8f8f8;
+	background: var(--background);
 	color: #29292e;
 }
 
