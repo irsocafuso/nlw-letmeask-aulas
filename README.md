@@ -12,7 +12,7 @@ Desenvolvido durante a 6° NLW da Rocketseat: Aplicação web para compartilhame
 * Sass
 
 TODO - :construction_worker:
-- [x] dark mode - criação do tema e salvar no localStorage
+- [ ] dark mode - criação do tema e salvar no localStorage
 - [x] SignOut da conta google
 - [ ] toasts: react-hot-toast
 - [ ] criar modal: react-modal
